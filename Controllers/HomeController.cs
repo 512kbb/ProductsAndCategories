@@ -18,7 +18,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        List<Product> AllProducts = _context.Products.ToList();
+        List<Product>? AllProducts = _context.Products.ToList();
         ViewBag.AllProducts = AllProducts;
         return View();
     }
@@ -26,13 +26,15 @@ public class HomeController : Controller
     [HttpPost("products/new")]
     public IActionResult AddProduct(Product newProduct)
     {
-        if (ModelState.IsValid == false)
+        if (ModelState.IsValid)
         {
-            return View("Index");
+            _context.Products.Add(newProduct);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
-        _context.Products.Add(newProduct);
-        _context.SaveChanges();
-        return RedirectToAction("Index");
+        List<Product>? AllProducts = _context.Products.ToList();
+        ViewBag.AllProducts = AllProducts;
+        return View("Index", newProduct);
     }
 
     [HttpGet("categories")]
@@ -47,7 +49,9 @@ public class HomeController : Controller
     {
         if (ModelState.IsValid == false)
         {
-            return View("CategoriesPage");
+            List<Category> AllCategories = _context.Categories.ToList();
+            ViewBag.AllCategories = AllCategories;
+            return View("CategoriesPage", newCategory);
         }
         _context.Categories.Add(newCategory);
         _context.SaveChanges();

@@ -1,24 +1,25 @@
-﻿@model ProductsAndCategories.Models.Product
-@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model Product
+
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-6">
             <h4 class="text-center">New Product</h4>
-            <form asp-action="AddProduct" asp-controller="Home">
+            <form asp-action="AddProduct" asp-controller="Home" method="post">
                 <div class="form-group row mb-2 align-items-center">
                     <label asp-for="Name" class="col"></label>
                     <input asp-for="Name" class="form-control col" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-group row mb-2 align-items-center">
                     <label asp-for="Description" class="col"></label>
                     <input asp-for="Description" class="form-control col" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
                 <div class="form-group row mb-2 align-items-center">
                     <label asp-for="Price" class="col"></label>
                     <input asp-for="Price" class="form-control col" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
                 <div class="form-group row mb-2 align-items-center">
                     <input type="submit" class="btn btn-secondary" value="Create">

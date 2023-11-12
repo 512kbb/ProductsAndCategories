@@ -11,6 +11,7 @@
                 <div class="form-group row mb-2 align-items-center">
                     <label asp-for="Name" class="col"></label>
                     <input asp-for="Name" class="form-control col" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-group row mb-2 align-items-center">
                     <input type="submit" class="btn btn-secondary" value="Create">

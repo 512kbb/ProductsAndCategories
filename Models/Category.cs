@@ -12,7 +12,7 @@ namespace ProductsAndCategories.Models
         [Key]
         public int CategoryId { get; set; }
         [Required(ErrorMessage = "Category name is required")]
-        [Display(Name = "Category Name:")]
+        [Display(Name = "Name:")]
         public string Name { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt {get; set;} = DateTime.Now;
