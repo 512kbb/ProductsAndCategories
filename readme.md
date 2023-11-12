@@ -20,9 +20,8 @@
 
 ### ERD and Wireframe
 
-<picture>
-    <source srcset="https://assets.codingdojo.com/boomyeah2015/codingdojo/curriculum/content/chapter/products-categories-erd.png">
-</picture>
+![Model](https://assets.codingdojo.com/boomyeah2015/codingdojo/curriculum/content/chapter/products-categories-erd.png)
+
 
 ## Requirements:
 
