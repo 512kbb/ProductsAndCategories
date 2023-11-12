@@ -19,9 +19,13 @@
 - Cuando se conecte una categoría o un producto, elimina la referencia del desplegable. Por ejemplo, si un producto tiene adjunta la categoría "Electrónica", no deberíamos ver "Electrónica" como opción en el desplegable al seleccionar otras categorías para adjuntar a ese producto en específico. ​
 
 ### ERD and Wireframe
-![Model](https://assets.codingdojo.com/boomyeah2015/codingdojo/curriculum/content/chapter/1663090161__ProductsAndCategories.png)
 
 ![Model](https://assets.codingdojo.com/boomyeah2015/codingdojo/curriculum/content/chapter/products-categories-erd.png)
+
+
+![Model](https://assets.codingdojo.com/boomyeah2015/codingdojo/curriculum/content/chapter/1663090161__ProductsAndCategories.png)
+- esta imagen no parece cargar asi que 
+- https://assets.codingdojo.com/boomyeah2015/codingdojo/curriculum/content/chapter/1663090161__ProductsAndCategories.png
 
 
 
