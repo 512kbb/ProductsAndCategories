@@ -1,0 +1,47 @@
+@model ProductsAndCategories.Models.Association
+<div class="container-fluid">
+    <h1 class="text-center">@ViewBag.Product.Name</h1>
+    <div class="row">
+        <div class="col-6">
+            <h3 class="text-left">Categories</h3>
+            <ul class="list-group">
+                @if (ViewBag.ProductCategories.Count == 0)
+                {
+                    <li class="list-group-item text-center" style="border: none;">No Categories</li>
+                }
+
+                else
+                {
+                    foreach (var category in ViewBag.ProductCategories)
+                    {
+                        <li class="list-group-item text-left mx-4" style="border: none;">@category.Name</li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-6 text-left">
+            <h3 class="">Add Category</h3>
+            <form asp-action="AddCategoryToProduct" asp-controller="Home"
+                asp-route-productId="@ViewBag.Product.ProductId" method="post">
+                <div class="form-group row">
+                    <input type="hidden" name="ProductId" value="@ViewBag.Product.ProductId" />
+                    @if (ViewBag.NotProductCategories.Count == 0)
+                    {
+                        <p class="text-center my-2">No Categories to Add</p>
+                    }
+                    else
+                    {
+                        <select name="CategoryId" class="form-control col">
+                            @foreach (var category in ViewBag.NotProductCategories)
+                            {
+                                <option value=@category.CategoryId>@category.Name</option>
+                            }
+                        </select>
+
+                        <input type="submit" value="Add" class="btn btn-secondary form-control col" />
+                    }
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

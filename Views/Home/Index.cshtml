@@ -1,0 +1,42 @@
+﻿@model ProductsAndCategories.Models.Product
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h4 class="text-center">New Product</h4>
+            <form asp-action="AddProduct" asp-controller="Home">
+                <div class="form-group row mb-2 align-items-center">
+                    <label asp-for="Name" class="col"></label>
+                    <input asp-for="Name" class="form-control col" />
+                </div>
+                <div class="form-group row mb-2 align-items-center">
+                    <label asp-for="Description" class="col"></label>
+                    <input asp-for="Description" class="form-control col" />
+                </div>
+                <div class="form-group row mb-2 align-items-center">
+                    <label asp-for="Price" class="col"></label>
+                    <input asp-for="Price" class="form-control col" />
+                </div>
+                <div class="form-group row mb-2 align-items-center">
+                    <input type="submit" class="btn btn-secondary" value="Create">
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+            <h4 class="text-center">All Products</h4>
+            <ul class="list-group">
+                @foreach (var product in ViewBag.AllProducts)
+                {
+                    <li class="list-group-item" style="border: none;">
+                        <a  href="products/@product.ProductId">
+                            @product.Name
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
