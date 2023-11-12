@@ -21,6 +21,7 @@
 ### ERD and Wireframe
 
 ![Model](https://assets.codingdojo.com/boomyeah2015/codingdojo/curriculum/content/chapter/products-categories-erd.png)
+
 ![Model](https://assets.codingdojo.com/boomyeah2015/codingdojo/curriculum/content/chapter/1663090161__ProductsAndCategories.png)
 
 
